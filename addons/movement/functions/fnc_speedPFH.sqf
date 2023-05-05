@@ -25,8 +25,9 @@ if (GVAR(oldSpeed) isNotEqualTo _speed) then {
 	} else {
 		CEM_player forceWalk false;
 	};
-	
-    CEM_player setAnimSpeedCoef (_speed select 1);
 
 	GVAR(oldSpeed) = _speed;
 };
+
+/* Needs to be run on every frame due to strange arma bug */
+[CEM_player, (_speed select 1)] remoteExec ["setAnimSpeedCoef"];
