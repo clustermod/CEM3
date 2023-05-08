@@ -17,9 +17,9 @@
  * Public: Yes
  */
 
-private _trans = (((animationState CEM_player) find "_") != -1 && (animationState CEM_player) select [((animationState CEM_player) find "_")+1, 1] == "a");
-private _wepState = (((animationState CEM_player) select [13,3]) == "low");
-private _inputs = (inputAction "WalkRunTemp" > 0 || inputAction "WalkRunToggle" > 0 || inputAction "turbo" > 0 || inputAction "TurboToggle" > 0 || stance CEM_player == "PRONE");
+private _trans = (((animationState cem_player) find "_") != -1 && (animationState cem_player) select [((animationState cem_player) find "_")+1, 1] == "a");
+private _wepState = (((animationState cem_player) select [13,3]) == "low");
+private _inputs = (inputAction "WalkRunTemp" > 0 || inputAction "WalkRunToggle" > 0 || inputAction "turbo" > 0 || inputAction "TurboToggle" > 0 || stance cem_player == "PRONE");
 
 if _trans exitWith { ["JOG", 1, 7] };
 if _wepState exitWith { ["JOG", 1, 7] };

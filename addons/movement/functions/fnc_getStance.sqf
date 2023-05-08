@@ -15,8 +15,8 @@
  * Public: Yes
  */
 
-private _stance = stance CEM_player;
-private _animState = (animationState CEM_player);
+private _stance = stance cem_player;
+private _animState = (animationState cem_player);
 private _trueStance = _stance;
 
 if (_animState select [((count _animState) - 2), 2] == "up") then {

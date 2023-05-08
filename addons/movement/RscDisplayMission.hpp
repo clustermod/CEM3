@@ -1,3 +1,6 @@
+#define UI_GRID_W (pixelW * pixelGridNoUIScale)
+#define UI_GRID_H (pixelH * pixelGridNoUIScale)
+
 class RscSlider;
 class RscPicture;
 class RscControlsGroupNoScrollbars;
