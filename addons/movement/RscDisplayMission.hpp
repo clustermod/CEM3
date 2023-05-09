@@ -18,8 +18,8 @@ class RscDisplayMission: RscDisplayEmpty {
             class controls {
                 class GVAR(stance_indicator): RscPicture {
                     onLoad = QUOTE([ARR_2(_this select 0, QQGVAR(stance_indicator))] call FUNC(onLoad));
-                    x = QUOTE(UI_GRID_W * 1.65);
-                    y = QUOTE(UI_GRID_H * 2.1);
+                    x = QUOTE(safezoneX + safezoneW - (UI_GRID_W * 83.10002));
+                    y = QUOTE(safezoneY + safezoneH - (UI_GRID_H * 50.21251));
                     w = QUOTE(UI_GRID_W * 12.37501);
                     h = QUOTE(UI_GRID_H * 13.92189);
                     text = QPATHTOF(UI\stance_1.paa);
@@ -32,8 +32,8 @@ class RscDisplayMission: RscDisplayEmpty {
 
                 class GVAR(speed_bar): GVAR(stance_indicator) {
                     onLoad = QUOTE([ARR_2(_this select 0, QQGVAR(speed_bar))] call FUNC(onLoad));
-                    x = QUOTE(UI_GRID_W * 1.5);
-                    y = QUOTE(UI_GRID_H * 10.0);
+                    x = QUOTE(safezoneX + safezoneW - (UI_GRID_W * 83.25));
+                    y = QUOTE(safezoneY + safezoneH - (UI_GRID_H * 42.3125));
                     w = QUOTE(UI_GRID_W * 12.37501);
                     h = QUOTE(UI_GRID_H * 12.99376);
                     text = QPATHTOF(UI\speed_indicator_bar.paa);
@@ -41,8 +41,8 @@ class RscDisplayMission: RscDisplayEmpty {
 
                 class GVAR(stance_bar): GVAR(stance_indicator) {
                     onLoad = QUOTE([ARR_2(_this select 0, QQGVAR(stance_bar))] call FUNC(onLoad));
-                    x = QUOTE(UI_GRID_W * -5.2);
-                    y = QUOTE(UI_GRID_H * 4.5);
+                    x = QUOTE(safezoneX + safezoneW - (UI_GRID_W * 89.95));
+                    y = QUOTE(safezoneY + safezoneH - (UI_GRID_H * 47.8125));
                     w = QUOTE(UI_GRID_W * 12.37501);
                     h = QUOTE(UI_GRID_H * 11.13851);
                     text = QPATHTOF(UI\stance_indicator_bar.paa);
@@ -50,8 +50,8 @@ class RscDisplayMission: RscDisplayEmpty {
 
                 class GVAR(speed_arrow): GVAR(stance_indicator) {
                     onLoad = QUOTE(ARR_2([_this select 0, QQGVAR(speed_arrow))] call FUNC(onLoad));
-                    x = QUOTE(UI_GRID_W * 13.4);
-                    y = QUOTE(UI_GRID_H * 15.7);
+                    x = QUOTE(safezoneX + safezoneW - (UI_GRID_W * 71.35));
+                    y = QUOTE(safezoneY + safezoneH - (UI_GRID_H * 36.6125));
                     w = QUOTE(UI_GRID_W * 0.74250);
                     h = QUOTE(UI_GRID_H * 0.55687);
                     text = QPATHTOF(UI\down_arrow.paa);
@@ -59,8 +59,8 @@ class RscDisplayMission: RscDisplayEmpty {
 
                 class GVAR(stance_arrow): GVAR(stance_indicator) {
                     onLoad = QUOTE(ARR_2([_this select 0, QQGVAR(stance_arrow))] call FUNC(onLoad));
-                    x = QUOTE(UI_GRID_W * 0);
-                    y = QUOTE(UI_GRID_H * 4.5);
+                    x = QUOTE(safezoneX + safezoneW - (UI_GRID_W * 84.75));
+                    y = QUOTE(safezoneY + safezoneH - (UI_GRID_H * 47.8125));
                     w = QUOTE(UI_GRID_W * 0.74250);
                     h = QUOTE(UI_GRID_H * 0.55687);
                     text = QPATHTOF(UI\right_arrow.paa);

@@ -48,7 +48,7 @@ if (GVAR(oldStance_ui) != _stance) then {
 	private _h = _pos select 3;
 	private _stancePos = _y + (((_h - 0.015) / 8) * _stance);
 
-	_stanceArrow ctrlSetPosition [(UI_GRID_W * 0), _stancePos];
+	_stanceArrow ctrlSetPosition [safezoneX + safezoneW - (UI_GRID_W * 84.75), _stancePos];
 	_stanceArrow ctrlCommit 0;
 
 	if (GVAR(fadeIndicator)) then {
@@ -70,7 +70,7 @@ if (GVAR(oldSpeed_ui) isNotEqualTo _speed) then {
 	private _w = _pos select 2;
 	private _speedPos = _x + (((_w - 0.015) / 7) * _speed);
 
-	_speedArrow ctrlSetPosition [_speedPos, (UI_GRID_H * 15.7)];
+	_speedArrow ctrlSetPosition [_speedPos, safezoneY + safezoneH - (UI_GRID_H * 36.6125)];
 	_speedArrow ctrlCommit 0;
 
 	if (GVAR(fadeIndicator)) then {
@@ -86,11 +86,11 @@ private _newResolution = [getResolution select 0, getResolution select 1];
 private _newScale = getResolution select 5;
 if (_newScale isNotEqualTo (GVAR(oldResolution) select 1) || { _newResolution isNotEqualTo (GVAR(oldResolution) select 0) }) then {
 	_movementInfoGroup ctrlSetPosition [safezoneX + safezoneW - (UI_GRID_W * 118.95005), safezoneY + safezoneH - (UI_GRID_H * 18.375), (UI_GRID_W * 14.35501), (UI_GRID_H * 18.56251)];
-	_stanceIndicator ctrlSetPosition [(UI_GRID_W * 1.65), (UI_GRID_H * 2.1), (UI_GRID_W * 12.37501), (UI_GRID_H * 13.92189)];
-	_stanceSlider ctrlSetPosition [(UI_GRID_W * -5.2), (UI_GRID_H * 4.5), (UI_GRID_W * 12.37501), (UI_GRID_H * 11.13851)];
-	_stanceArrow ctrlSetPosition [(UI_GRID_W * 0), (UI_GRID_H * 4.5), (UI_GRID_W * 0.74250), (UI_GRID_H * 0.55687)];
-	_speedSlider ctrlSetPosition [(UI_GRID_W * 1.5), (UI_GRID_H * 10.0), (UI_GRID_W * 12.37501), (UI_GRID_H * 12.99376)];
-	_speedArrow ctrlSetPosition [(UI_GRID_W * 13.4), (UI_GRID_H * 15.7), (UI_GRID_W * 0.74250), (UI_GRID_H * 0.55687)];
+	_stanceIndicator ctrlSetPosition [safezoneX + safezoneW - (UI_GRID_W * 83.10002), safezoneY + safezoneH - (UI_GRID_H * 50.21251), (UI_GRID_W * 12.37501), (UI_GRID_H * 13.92189)];
+	_stanceSlider ctrlSetPosition [safezoneX + safezoneW - (UI_GRID_W * 89.95), safezoneY + safezoneH - (UI_GRID_H * 47.8125), (UI_GRID_W * 12.37501), (UI_GRID_H * 11.13851)];
+	_stanceArrow ctrlSetPosition [safezoneX + safezoneW - (UI_GRID_W * 84.75), safezoneY + safezoneH - (UI_GRID_H * 47.8125), (UI_GRID_W * 0.74250), (UI_GRID_H * 0.55687)];
+	_speedSlider ctrlSetPosition [safezoneX + safezoneW - (UI_GRID_W * 83.25), safezoneY + safezoneH - (UI_GRID_H * 42.3125), (UI_GRID_W * 12.37501), (UI_GRID_H * 12.99376)];
+	_speedArrow ctrlSetPosition [safezoneX + safezoneW - (UI_GRID_W * 71.35), safezoneY + safezoneH - (UI_GRID_H * 36.6125), (UI_GRID_W * 0.74250), (UI_GRID_H * 0.55687)];
 
 	_movementInfoGroup ctrlCommit 0;
 	_stanceIndicator ctrlCommit 0;
