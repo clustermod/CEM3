@@ -25,4 +25,4 @@ if _trans exitWith { ["JOG", 1, 7] };
 if _wepState exitWith { ["JOG", 1, 7] };
 if _inputs exitWith { ["JOG", 1, 7] };
 
-GVAR(speeds) select GVAR(speed);
+(GVAR(speeds) select GVAR(speed)) + [cem_movement_speed];
