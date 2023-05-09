@@ -25,5 +25,4 @@ if _trans exitWith { ["JOG", 1, 7] };
 if _wepState exitWith { ["JOG", 1, 7] };
 if _inputs exitWith { ["JOG", 1, 7] };
 
-private _speedArray = [["WALK", 0.5, GVAR(speed)], ["WALK", 0.7, GVAR(speed)], ["WALK", 1, GVAR(speed)], ["WALK", 1.2, GVAR(speed)], ["WALK", 1.5, GVAR(speed)], ["WALK", 1.8, GVAR(speed)], ["JOG", 0.9, GVAR(speed)], ["JOG", 1, GVAR(speed)]];
-_speedArray select GVAR(speed);
+GVAR(speeds) select GVAR(speed);

@@ -23,13 +23,13 @@ if ((toUpper ((animationState cem_player) select [8,4])) isEqualTo "MLMP") exitW
 
 private _speed = [] call FUNC(getSpeed);
 if (GVAR(oldSpeed) isNotEqualTo _speed) then {
-	if ((_speed select 0) isEqualTo "WALK") then {
-		cem_player forceWalk true;
-	} else {
-		cem_player forceWalk false;
-	};
+    if ((_speed select 0) isEqualTo "WALK") then {
+        cem_player forceWalk true;
+    } else {
+        cem_player forceWalk false;
+    };
 
-	GVAR(oldSpeed) = _speed;
+    GVAR(oldSpeed) = _speed;
 };
 
 /* Needs to be run on every frame due to strange arma bug */
