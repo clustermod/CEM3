@@ -4,6 +4,7 @@ GVAR(speeds) = [["WALK", 0.5], ["WALK", 0.7], ["WALK", 1], ["WALK", 1.2], ["WALK
 GVAR(oldStance_ui) = -1;
 GVAR(oldSpeed) = ["", -1];
 GVAR(oldSpeed_ui) = -1;
+GVAR(AnimSpeedDisabled) = true;
 GVAR(speed) = 7;
 
 private _newResolution = [getResolution select 0, getResolution select 1];
