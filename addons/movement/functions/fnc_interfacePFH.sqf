@@ -17,9 +17,7 @@
 disableSerialization;
 
 private _parent = uiNamespace getVariable [QGVAR(movementInfoGroup), controlNull];
-if (GVAR(safeMapping)) then {
-    if (visibleMap) exitWith { _parent ctrlShow false; };
-};
+if (visibleMap) exitWith { _parent ctrlShow false; };
 if (!isNull objectParent CEM_player) exitWith { _parent ctrlShow false; };
 
 private _movementInfoGroup = uiNamespace getVariable [QGVAR(movementInfoGroup), controlNull];

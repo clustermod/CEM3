@@ -15,7 +15,9 @@
  * Public: No
  */
 
-if (visibleMap || { !isNull objectParent cem_player }) exitWith { };
+if (GVAR(safeMapping)) then {
+    if (visibleMap || { !isNull objectParent cem_player }) exitWith { };
+};
 
 if ((speed cem_player) isEqualTo 0) exitWith {
     if (!GVAR(AnimSpeedDisabled) || { (toUpper ((animationState cem_player) select [8,4])) isEqualTo "MLMP" }) then {
