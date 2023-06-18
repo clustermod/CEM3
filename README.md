@@ -42,7 +42,7 @@ You can help out with the ongoing development by looking for potential bugs in t
 To contribute something to **CEM3**, simply fork this repository and submit your pull requests for review by other collaborators.
 
 ### Submitting issues and requesting features
-Please use our [Issue Tracker](https://github.com/Tapawingo/CEM3/issues) to report a bug, propose a feature, or suggest changes to the existing ones.
+Please use our [Issue Tracker](https://github.com/Clustermod/CEM3/issues) to report a bug, propose a feature, or suggest changes to the existing ones.
 
 ### Get in touch
 <table>
