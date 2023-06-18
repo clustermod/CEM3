@@ -43,5 +43,11 @@
         <Key ID="STR_CEM_Movement_fadeIndicatorTooltip">
             <English>Fades the indicator out after use.</English>
         </Key>
+        <Key ID="STR_CEM_Movement_safeMapping">
+            <English>Safe mapping</English>
+        </Key>
+        <Key ID="STR_CEM_Movement_safeMappingTooltip">
+            <English>Stop moving when the map is opened.</English>
+        </Key>
     </Package>
 </Project>
