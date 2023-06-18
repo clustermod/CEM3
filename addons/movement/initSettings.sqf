@@ -39,3 +39,13 @@ private _category = format ["CE: %1", localize LSTRING(Category)];
     false,
     { }
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(safeMapping),
+    "CHECKBOX",
+    [localize LSTRING(safeMapping), localize LSTRING(safeMappingTooltip)],
+    _category,
+    true,
+    false,
+    { }
+] call CBA_fnc_addSetting;
