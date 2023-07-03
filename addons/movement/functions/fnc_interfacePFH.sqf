@@ -38,7 +38,7 @@ _speedArrow ctrlShow GVAR(showSpeedSlider);
 
 /* Adjust stance indication */
 _stance = [] call FUNC(getStance);
-if (GVAR(oldStance_ui) != _stance) then {
+if (_stance != -1 && GVAR(oldStance_ui) != _stance) then {
     _parent ctrlSetFade 0;
     _parent ctrlCommit 0;
     _stanceIndicator ctrlSetText (QPATHTOF(UI\stance_) + str _stance + ".paa");
