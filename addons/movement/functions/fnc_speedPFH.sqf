@@ -20,7 +20,7 @@ if (GVAR(safeMapping)) then {
 };
 
 if ((speed cem_player) isEqualTo 0) exitWith {
-    if (!GVAR(AnimSpeedDisabled) || { (toUpper ((animationState cem_player) select [8,4])) isEqualTo "MLMP" }) then {
+    if (!GVAR(AnimSpeedDisabled)) then {
         [cem_player, 1] remoteExec ["setAnimSpeedCoef"]; 
         GVAR(AnimSpeedDisabled) = true;
     };
@@ -34,9 +34,9 @@ if (GVAR(oldSpeed) isNotEqualTo _speed) then {
         cem_player forceWalk false;
     };
 
+    [cem_player, (_speed select 1)] remoteExec ["setAnimSpeedCoef"];
+    GVAR(AnimSpeedDisabled) = false;
     GVAR(oldSpeed) = _speed;
 };
 
-/* Needs to be run on every frame due to strange arma bug */
-[cem_player, (_speed select 1)] remoteExec ["setAnimSpeedCoef"];
-GVAR(AnimSpeedDisabled) = false;
+/* Needs to be run on every frame due to some strange arma bug resetting the animSpeedCoef to 1 on every frame */

@@ -10,6 +10,8 @@ private _category = format ["CE: %1", localize LSTRING(Category)];
         localize LSTRING(MovementSpeedUpTooltip)
     ], 
     {
+        /* If limping return max of 2 */
+        if ((toUpper ((animationState cem_player) select [8,4])) isEqualTo "MLMP") exitWith { GVAR(speed) = (GVAR(speed) + 1) min 2; };
         GVAR(speed) = (GVAR(speed) + 1) min 7;
     }, 
     { },
