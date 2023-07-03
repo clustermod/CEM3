@@ -24,6 +24,9 @@ private _inputs = (inputAction "WalkRunTemp" > 0 || inputAction "WalkRunToggle" 
 /* If limping return max of 2 */
 if ((toUpper ((animationState cem_player) select [8,4])) isEqualTo "MLMP") exitWith { (GVAR(speeds) select (GVAR(speed) min 2)) + [cem_movement_speed]; };
 
+/* If unit is not moving */
+if ((toUpper ((animationState cem_player) select [0,4])) isNotEqualTo "AMOV") exitWith { ["JOG", 1, 7] };
+
 if _trans exitWith { ["JOG", 1, 7] };
 if _wepState exitWith { ["JOG", 1, 7] };
 if _inputs exitWith { ["JOG", 1, 7] };

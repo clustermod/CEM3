@@ -19,13 +19,6 @@ if (GVAR(safeMapping)) then {
     if (visibleMap || { !isNull objectParent cem_player }) exitWith { };
 };
 
-if ((speed cem_player) isEqualTo 0) exitWith {
-    if (!GVAR(AnimSpeedDisabled)) then {
-        [cem_player, 1] remoteExec ["setAnimSpeedCoef"]; 
-        GVAR(AnimSpeedDisabled) = true;
-    };
-};
-
 private _speed = [] call FUNC(getSpeed);
 if (GVAR(oldSpeed) isNotEqualTo _speed) then {
     if ((_speed select 0) isEqualTo "WALK") then {
@@ -38,5 +31,3 @@ if (GVAR(oldSpeed) isNotEqualTo _speed) then {
     GVAR(AnimSpeedDisabled) = false;
     GVAR(oldSpeed) = _speed;
 };
-
-/* Needs to be run on every frame due to some strange arma bug resetting the animSpeedCoef to 1 on every frame */
