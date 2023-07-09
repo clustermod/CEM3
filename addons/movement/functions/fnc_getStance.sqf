@@ -4,7 +4,7 @@
  * Gets a units actual incremential stance
  *
  * Arguments:
- * Nonr
+ * None
  *
  * Return Value:
  * Stance <NUMBER>
@@ -15,26 +15,15 @@
  * Public: Yes
  */
 
-private _stance = stance cem_player;
-private _animState = (animationState cem_player);
-private _trueStance = _stance;
+/* Get animation properties */
+private _animation = toLower animationState cem_player;
+private _pose = (_animation select [5,3]);
+private _direction = (_animation select [21,3]);
 
-if (_animState select [((count _animState) - 2), 2] == "up") then {
-  _trueStance = "H_"+_stance;
-};
+private _st = (createHashMapFromArray [["erc", 1], ["knl", 4], ["crh", 4], ["pne", 7]]) getordefault [_pose, -1];
+if (_st isEqualTo -1) exitWith { -1 };
 
-if (_animState select [((count _animState) - 4), 4] == "down") then {
-  _trueStance = "L_"+_stance;
-};
+private _mod = (createHashMapFromArray [["dow", 1], ["up", -1]]) getordefault [_direction, 0];
+_st = _st + _mod;
 
-if (_stance == "PRONE" && _animState select [(_animState find "_") - 2, 2] == "up") then {
-  _trueStance = "H_"+_stance;
-};
-
-if (_stance == "PRONE" && _animState select [(_animState find "_") - 4, 4] == "down") then {
-  _trueStance = "L_"+_stance;
-};
-
-private _stanceIndex = [[["L_PRONE", 8], ["PRONE", 7], ["H_PRONE", 6], ["L_CROUCH", 5], ["CROUCH", 4], ["H_CROUCH", 3], ["L_STAND", 2], ["STAND", 1], ["H_STAND", 0]]] call CBA_fnc_hashCreate;
-
-[_stanceIndex, _trueStance, -1] call CBA_fnc_hashGet;
+_st;
