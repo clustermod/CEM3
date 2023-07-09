@@ -28,27 +28,27 @@ private _direction = (_animation select [21,3]);
 
 /* If limping return max of 2 */
 if (_movement isEqualTo "lmp") exitWith { 
-	(GVAR(speeds) select (GVAR(speed) min 2)) + [cem_movement_speed]; 
+    (GVAR(speeds) select (GVAR(speed) min 2)) + [cem_movement_speed]; 
 };
 
 /* If unit is not moving */
 if (_action isNotEqualTo "mov") exitWith { 
-	["JOG", 1, 7] 
+    ["JOG", 1, 7] 
 };
 
 /* If weapon is lowered */
 if (_stance isEqualTo "low") exitWith { 
-	["JOG", 1, 7] 
+    ["JOG", 1, 7] 
 };
 
 /* If is sprinting */
 if (_movement isEqualTo "eva") exitWith { 
-	["JOG", 1, 7] 
+    ["JOG", 1, 7] 
 };
 
 /* If is prone */
 if (_pose isEqualTo "pne") exitWith { 
-	["JOG", 1, 7] 
+    ["JOG", 1, 7] 
 };
 
 (GVAR(speeds) select GVAR(speed)) + [cem_movement_speed];
