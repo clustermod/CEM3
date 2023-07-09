@@ -17,12 +17,38 @@
  * Public: Yes
  */
 
-private _trans = (((animationState cem_player) find "_") != -1 && (animationState cem_player) select [((animationState cem_player) find "_")+1, 1] == "a");
-private _wepState = (((animationState cem_player) select [13,3]) == "low");
-private _inputs = (inputAction "WalkRunTemp" > 0 || inputAction "WalkRunToggle" > 0 || inputAction "turbo" > 0 || inputAction "TurboToggle" > 0 || stance cem_player == "PRONE");
+/* Get animation properties */
+private _animation = toLower animationState cem_player;
+private _action = (_animation select [1,3]);
+private _pose = (_animation select [5,3]);
+private _movement = (_animation select [9,3]);
+private _stance = (_animation select [13,3]);
+private _weapon = (_animation select [17,3]);
+private _direction = (_animation select [21,3]);
 
-if _trans exitWith { ["JOG", 1, 7] };
-if _wepState exitWith { ["JOG", 1, 7] };
-if _inputs exitWith { ["JOG", 1, 7] };
+/* If limping return max of 2 */
+if (_movement isEqualTo "lmp") exitWith { 
+    (GVAR(speeds) select (GVAR(speed) min 2)) + [cem_movement_speed]; 
+};
+
+/* If unit is not moving */
+if (_action isNotEqualTo "mov") exitWith { 
+    ["JOG", 1, 7] 
+};
+
+/* If weapon is lowered */
+if (_stance isEqualTo "low") exitWith { 
+    ["JOG", 1, 7] 
+};
+
+/* If is sprinting */
+if (_movement isEqualTo "eva") exitWith { 
+    ["JOG", 1, 7] 
+};
+
+/* If is prone */
+if (_pose isEqualTo "pne") exitWith { 
+    ["JOG", 1, 7] 
+};
 
 (GVAR(speeds) select GVAR(speed)) + [cem_movement_speed];
