@@ -27,7 +27,12 @@ if (GVAR(oldSpeed) isNotEqualTo _speed) then {
         cem_player forceWalk false;
     };
 
-    [cem_player, (_speed select 1)] remoteExec ["setAnimSpeedCoef"];
     GVAR(AnimSpeedDisabled) = false;
     GVAR(oldSpeed) = _speed;
+};
+
+// Setting speedcoef every frame to make compatible with other mods
+// Allow overriding by other modders / scripters
+if (!GVAR(override)) then {
+    [cem_player, (_speed select 1)] remoteExec ["setAnimSpeedCoef"];
 };

@@ -1,5 +1,6 @@
 #include "script_component.hpp"
 
+GVAR(override) = false;
 GVAR(speeds) = [["WALK", 0.5], ["WALK", 0.7], ["WALK", 1], ["WALK", 1.2], ["WALK", 1.5], ["WALK", 1.8], ["JOG", 0.9], ["JOG", 1]];
 GVAR(oldStance_ui) = -1;
 GVAR(oldSpeed) = ["", -1];
