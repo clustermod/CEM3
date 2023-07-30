@@ -1,5 +1,6 @@
 #define INPUT_MOUSE_SCROLL_UP	0xF8
 #define INPUT_MOUSE_SCROLL_DOWN	0xF9
+#define INPUT_MOUSE_SCROLL	0xF2
 private _category = format ["CE: %1", localize LSTRING(Category)];
 
 [
@@ -34,6 +35,24 @@ private _category = format ["CE: %1", localize LSTRING(Category)];
     { },
     [
         INPUT_MOUSE_SCROLL_DOWN, 
+        [false, true, false]
+    ]
+] call CBA_fnc_addKeybind;
+
+[
+    _category,
+    QGVAR(movementSpeedReset),
+    [
+        localize LSTRING(MovementSpeedReset), 
+        localize LSTRING(MovementSpeedResetTooltip)
+    ], 
+    {
+        if ((toUpper ((animationState cem_player) select [8,4])) isEqualTo "MLMP") exitWith { GVAR(speed) = 2; };
+        GVAR(speed) = 7;
+    }, 
+    { },
+    [
+        INPUT_MOUSE_SCROLL, 
         [false, true, false]
     ]
 ] call CBA_fnc_addKeybind;

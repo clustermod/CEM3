@@ -25,6 +25,12 @@
         <Key ID="STR_CEM_Movement_MovementSpeedDownTooltip">
             <English>Decreases the players movement speed.</English>
         </Key>
+        <Key ID="STR_CEM_Movement_MovementSpeedReset">
+            <English>Reset speed</English>
+        </Key>
+        <Key ID="STR_CEM_Movement_MovementSpeedResetTooltip">
+            <English>Resets movement speed to default value.</English>
+        </Key>
         <Key ID="STR_CEM_Movement_ShowSpeedSlider">
             <English>Show speed slider</English>
         </Key>
