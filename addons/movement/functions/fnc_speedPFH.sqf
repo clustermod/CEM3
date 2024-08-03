@@ -2,16 +2,16 @@
 /*
  * Author: Eric
  * Handles movement speed changes
- * 
+ *
  * Arguments:
  * None
- * 
+ *
  * Return Value:
  * None
- * 
+ *
  * Example:
  * [] call cem_movement_fnc_speedPFH
- * 
+ *
  * Public: No
  */
 
@@ -34,5 +34,11 @@ if (GVAR(oldSpeed) isNotEqualTo _speed) then {
 // Setting speedcoef every frame to make compatible with other mods
 // Allow overriding by other modders / scripters
 if (!GVAR(override)) then {
-    [cem_player, (_speed select 1)] remoteExec ["setAnimSpeedCoef"];
+    private _speedCoeff = (_speed select 1);
+    [cem_player, _speedCoeff] remoteExec ["setAnimSpeedCoef"];
+
+    // _speedCoeff is in range [0.5, 1], _coeff in [0, 1].
+    private _coeff = (_speedCoeff - 0.5) * 2;
+    [cem_player, ["camouflageCoef", (_coeff max GVAR(camouflageCoefMin)) min GVAR(camouflageCoefMax)]] remoteExec ["setUnitTrait"];
+    [cem_player, ["audibleCoef", (_coeff max GVAR(audibleCoefMin)) min GVAR(audibleCoefMax)]] remoteExec ["setUnitTrait"];
 };
